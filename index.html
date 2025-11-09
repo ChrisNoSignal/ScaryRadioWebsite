@@ -1,90 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            background: black;
-            overflow: hidden;
-            position: relative;
-        }
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ScaryRadio</title>
 
-        /* Stars */
-        .stars {
-            position: fixed;
-            width: 1px;
-            height: 1px;
-            background: white;
-            box-shadow: 
-                2vw 3vh 1px white,
-                10vw 5vh 1px white,
-                20vw 8vh 1px white,
-                30vw 15vh 1px white,
-                40vw 20vh 1px white,
-                50vw 12vh 1px white,
-                60vw 25vh 1px white,
-                70vw 8vh 1px white,
-                80vw 18vh 1px white,
-                90vw 22vh 1px white,
-                15vw 35vh 1px white,
-                25vw 45vh 1px white,
-                35vw 38vh 1px white,
-                45vw 42vh 1px white,
-                55vw 48vh 1px white;
-        }
+    <!-- Three.js & GLTF Loader -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
 
-        /* Earth */
-        .earth {
-            position: fixed;
-            bottom: -60vh;
-            left: -10vw;
-            width: 120vw;
-            height: 120vh;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #4B79A1, #283E51);
-            box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
-        }
-
-        /* Radio */
-        .radio {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 200px;
-            height: 120px;
-            background: silver;
-            border-radius: 15px;
-            border: 4px solid #333;
-            box-shadow: 0 0 20px rgba(255,255,255,0.2);
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .antenna {
-            position: absolute;
-            top: -30px;
-            left: 50%;
-            width: 4px;
-            height: 30px;
-            background: #444;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(-50%, -50%); }
-            50% { transform: translate(-50%, -55%); }
-        }
-    </style>
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="stars"></div>
-    <div class="earth"></div>
-    <div class="radio">
-        <div class="antenna"></div>
-    </div>
-    <script>
-        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    </script>
+    <img class="earth" src="Images/Earth.png" alt="Earth">
+    <div id="model-container"></div>
+    <div id="song-info" class="song-info"></div>
+
+    <!-- Main Script -->
+    <script src="main.js"></script>
     <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
